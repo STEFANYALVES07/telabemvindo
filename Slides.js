@@ -1,20 +1,14 @@
 export default [
   {
     id: "1",
-    title: "aaaaaaa",
-    desciption: "bbbb",
-    image: require("./imagens/cupcakes.png"),
+    image: require("./imagens/bemvindo.png"),
   },
   {
     id: "2",
-    title: "aaaaaaa",
-    desciption: "bbbb",
-    image: require("./imagens/donuts.png"),
+    image: require("./imagens/sorvete.png"),
   },
   {
     id: "3",
-    title: "aaaaaaa",
-    desciption: "bbbb",
-    image: require("./imagens/sorvetepginicial.png"),
+    image: require("./imagens/cupcake.png"),
   },
 ];

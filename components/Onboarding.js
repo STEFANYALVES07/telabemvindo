@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { StyleSheet, View, FlatList, Animated } from "react-native";
 import Slides from "../Slides";
 import OnboardingItem from "./OnboardingItem";
+import Paginator from "./Paginator";
 
 export default function Onboarding() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,18 +12,18 @@ export default function Onboarding() {
     setCurrentIndex(viewableItems[0].index);
   }).current;
 
-  const viewConfig = useRef({ viewAreaCoveragePercentThreshoud: 50 }).current;
+  const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
 
   return (
     <View style={styles.container}>
-      <View style={{ flex: 3 }}>
+      <View style={{ flex: 1 }}>
         <FlatList
           data={Slides}
           renderItem={({ item }) => <OnboardingItem item={item} />}
           horizontal
           showsHorizontalScrollIndicator
-          pagingEnabled
           bounces={false}
+          pagingEnabled
           keyExtractor={(item) => item.id}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { x: scrollX } } }],
@@ -36,6 +37,7 @@ export default function Onboarding() {
           ref={slidesRef}
         />
       </View>
+      <Paginator data={Slides} scrollX={scrollX} />
     </View>
   );
 }
@@ -43,7 +45,7 @@ export default function Onboarding() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
   },
