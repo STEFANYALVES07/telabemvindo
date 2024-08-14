@@ -20,9 +20,11 @@ export default function Onboarding() {
       <View style={{ flex: 1 }}>
         <FlatList
           data={Slides}
-          renderItem={({ item }) => <OnboardingItem item={item} />}
+          renderItem={({ item }) => (
+            <OnboardingItem item={item} scrollX={scrollX} />
+          )}
           horizontal
-          showsHorizontalScrollIndicator
+          showsHorizontalScrollIndicator={false}
           bounces={false}
           pagingEnabled
           keyExtractor={(item) => item.id}
@@ -37,9 +39,12 @@ export default function Onboarding() {
           viewabilityConfig={viewConfig}
           ref={slidesRef}
         />
+
+        <View style={styles.paginatorContainer}>
+          <Paginator data={Slides} scrollX={scrollX} />
+          <ButtonComponent />
+        </View>
       </View>
-      <Paginator data={Slides} scrollX={scrollX} />
-      <ButtonComponent />
     </View>
   );
 }
@@ -48,6 +53,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paginatorContainer: {
+    position: "absolute",
+    bottom: 10,
+    width: "100%",
+
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   },

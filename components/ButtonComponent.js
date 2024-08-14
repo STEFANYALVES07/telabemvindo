@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 export default function ButtonComponent() {
@@ -8,14 +8,13 @@ export default function ButtonComponent() {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={onPress}>
-        <AntDesign name="arrowright" size={24} color="black" />
+        <AntDesign name="arrowright" size={24} color="pink" />
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {},
   button: {
     left: "35%",
     bottom: "200%",
