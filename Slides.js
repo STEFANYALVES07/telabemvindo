@@ -7,8 +7,4 @@ export default [
     id: "2",
     image: require("./imagens/sorvete.png"),
   },
-  {
-    id: "3",
-    image: require("./imagens/cupcake.png"),
-  },
 ];

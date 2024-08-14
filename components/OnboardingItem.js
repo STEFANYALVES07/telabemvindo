@@ -1,6 +1,12 @@
-import { StyleSheet, View, Image, useWindowDimensions } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  useWindowDimensions,
+  Text,
+} from "react-native";
 
-export default OnboardingItem = ({ item }) => {
+export default OnboardingItem = ({ item, onPress }) => {
   const { width } = useWindowDimensions();
   return (
     <View style={[styles.container, { width }]}>
